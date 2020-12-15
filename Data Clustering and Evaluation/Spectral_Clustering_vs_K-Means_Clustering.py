@@ -67,7 +67,7 @@ def Spectral_Clustering(k):
     L = D-W
     e_values,e_vectors = np.linalg.eig(L)
     y = e_vectors[:, e_values.argsort()]
-    y = y[:,1:k+1]
+    y = y[:,0:k]
     clusters,_ = K_means(k,30,y)
     
     return clusters
